@@ -115,6 +115,16 @@ strong {
   clear: both;
 }
 
+#faq h1 {
+  font-weight: 100;
+  font-size: 1.6em;
+  margin-top: 80px;
+}
+
+#faq p {
+  width: 600px;
+}
+
 li code {
   color: #353535;
 }
