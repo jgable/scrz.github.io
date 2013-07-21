@@ -1,53 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>scrz</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700&amp;subset=latin,latin-ext">
-</head>
-<body class="inner">
-  <header>
-    <section id="logo">
-      <span class="scrz">scrz<em>v0.0.1</em></span>
-    </section>
-    <nav class="clearfix">
-      <a href="/">Home</a>
-      <a href="/guide.html">Guide</a>
-      <a href="/screenshots.html">Screenshots</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/faq.html" class="active">FAQ</a>
-    </nav>
-  </header>
-  <section id="content">
-    <div id="faq">
-      <h1>How is scrz different from Capistrano or Fabric?</h1>
-      <p>
-      Both Capistrano and Fabric require that the person performing the deployment
-      has SSH access to the servers. Scrz uses a management server and developers
-      only need access to that. Scrz then automatically distributes your
-      application to the servers.
-      </p>
+---
+layout: default
+title: scrz
+---
 
-      <h1>How do I create a slug?</h1>
-      <p>
-      A slug is a SquashFS image. Use mksquashfs from the squashfs-tools
-      package to create it.
-      The image should contain your applications and all
-      dependencies which are not provided by the host (such as gems or node
-      packages).
-      </p>
-      <p>
-      I highly recommend that you create a script which prepares
-      your app, downloads dependencies, compiles binaries etc.
-      Here is such script for a Ruby on Rails app. It assumes that the bundler
-      gem is installed on the host.
-      </p>
-      <pre><code>bundle --deployment --without development test
+<div id="faq">
+    <h1>How is scrz different from Capistrano or Fabric?</h1>
+    <p>
+    Both Capistrano and Fabric require that the person performing the deployment
+    has SSH access to the servers. Scrz uses a management server and developers
+    only need access to that. Scrz then automatically distributes your
+    application to the servers.
+    </p>
+
+    <h1>How do I create a slug?</h1>
+    <p>
+    A slug is a SquashFS image. Use mksquashfs from the squashfs-tools
+    package to create it.
+    The image should contain your applications and all
+    dependencies which are not provided by the host (such as gems or node
+    packages).
+    </p>
+    <p>
+    I highly recommend that you create a script which prepares
+    your app, downloads dependencies, compiles binaries etc.
+    Here is such script for a Ruby on Rails app. It assumes that the bundler
+    gem is installed on the host.
+    </p>
+    <pre><code>bundle --deployment --without development test
 RAILS_ENV=production bundle exec rake assets:precompile</code></pre>
-      <p>To run the application server off of this slug, use the entry point
-      <code>bundle exec rails server</code>.
-      <p>
-    </div>
-  </section>
-</body>
-</html>
+    <p>To run the application server off of this slug, use the entry point
+    <code>bundle exec rails server</code>.
+    <p>
+</div>

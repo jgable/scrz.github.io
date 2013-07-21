@@ -15,9 +15,24 @@ body {
 
 h1, h2, h3 {
   margin: 5px 0;
-  font-weight: normal;
+  font-weight: 100;
   color: #353535;
   -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 3em;
+  margin-top: 80px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.6em;
+  margin-top: 0;
 }
 
 p em {
@@ -28,6 +43,7 @@ p em {
 
 p {
   margin: 20px 0;
+  width: 600px;
 }
 
 strong {
@@ -36,6 +52,10 @@ strong {
 
 .inner {
   margin-top: 100px;
+}
+.scroll header {
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 4px #eee;
 }
 
 #content {
@@ -61,58 +81,12 @@ strong {
 #home p {
   width: 400px;
   margin-top: 60px;
-  margin-left: 60px;
-}
-
-#guide h1 {
-  font-weight: 100;
-  font-size: 3em;
-  margin-top: 80px;
-}
-
-#guide h2 {
-  font-weight: 100;
-  font-size: 2em;
-  margin-top: 0;
+  margin-left: 40px;
 }
 
 #guide p, #guide ul {
     font-size: 1em;
     width: 600px;
-}
-
-#screenshots h1 {
-  font-weight: 100;
-  font-size: 3em;
-  margin-top: 80px;
-}
-
-#screenshots h2 {
-  font-weight: 100;
-  font-size: 2em;
-  margin-top: 40px;
-}
-
-#screenshots img {
-  display: block;
-  width: 100%;
-}
-
-.screenshot .shadow {
-  width: 600px;
-  float: left;
-}
-
-.screenshot p {
-  margin-left: 620px;
-  width: 300px;
-}
-
-.screenshot:after {
-  content: '';
-  display: block;
-  height: 0;
-  clear: both;
 }
 
 #faq h1 {
@@ -131,11 +105,6 @@ li code {
 
 section section p {
   width: 60%;
-}
-
-h2 {
-  margin-top: 80px;
-  font-weight: bold;
 }
 
 /* links */
@@ -160,7 +129,7 @@ nav a {
 
 /* logo */
 
-#logo {
+.logo {
   margin-top: 180px;
   margin-bottom: 180px;
   margin-left: 80px;
@@ -170,19 +139,19 @@ nav a {
   -webkit-font-smoothing: antialiased;
 }
 
-#logo .scrz {
+.logo .scrz {
   font-weight: 400;
   color: #353535;
   width: 100%;
 }
 
-#logo .description {
+.logo .description {
   font-weight: 100;
   color: #cecece;
   line-height: .75;
 }
 
-#logo em {
+header .logo em {
   font-style: normal;
   font-weight: 100;
   font-size: 12px;
@@ -190,37 +159,38 @@ nav a {
   margin-left: 5px;
 }
 
-#logo a {
+.logo a {
   color: #cecece;
 }
 
-#logo a:hover {
+.logo a:hover {
   text-decoration: none;
   color: #858585;
 }
 
 /* secondary page logo */
 
-.inner header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(255,255,255,1);
-  width: 100%;
-  height: 55px;
-  z-index: 100;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,1);
+    width: 100%;
+    height: 55px;
+    z-index: 100;
 }
 
-.inner #logo {
-  position: fixed;
-  top: 0;
-  margin: 0;
-  padding: 5px 25px;
-  width: auto;
-  border-left: none;
+header .logo {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0 25px;
+    width: auto;
+    border-left: none;
+    line-height: 55px;
 }
 
-.inner #logo .scrz {
+header .logo .scrz {
   font-size: 25px;
 }
 
@@ -237,6 +207,7 @@ p code {
   font-size: .8em;
   padding: 2px 3px;
   -webkit-border-radius: 3px;
+  color: #353535;
 }
 
 pre {
@@ -262,9 +233,10 @@ pre code {
 
 nav {
   position: fixed;
-  top: 15px;
+  top: 0;
   right: 20px;
   z-index: 100;
+    line-height: 55px;
 }
 
 nav a {
@@ -301,56 +273,83 @@ nav a:hover {
   display: inline-block;
 }
 
-/* shadow */
 
-.shadow {
-  border: 1px solid #eee;
-  position: relative;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
-  display: block;
-  padding: 8px;
-  background-color: white;
-  margin-bottom: 20px;
+.command-title {
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #111;
+    margin: 40px 0 10px;
 }
 
-/* The shadow elements are the same except where they are anchored,
- * their rotation origin and the skew/rotation direction. */
-
-/* Bottom right shadow */
-.shadow::after {
-  z-index: -1;
-  position: absolute;
-  background: transparent;
-  width: 40%;
-  height: 40%;
-  content: '';
-  right: 0;
-  bottom: 0;
-
-  transform-origin: right bottom;
-  -webkit-transform-origin: right bottom;
-  transform: skew(20deg) rotate(10deg);
-  -webkit-transform: skew(20deg) rotate(10deg);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.command {
+    color: #353535;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 10px 0;
+    background: white;
+    border: 1px solid #d8d8d8;
+    border-bottom: 1px solid #ddd;
+    border-radius: 2px;
+    width: 600px;
 }
 
-/* Bottom left shadow */
-.shadow::before {
-  z-index: -1;
-  position: absolute;
-  background: transparent;
-  width: 40%;
-  height: 40%;
-  content: '';
-  left: 0;
-  bottom: 0;
+.command-cmdline {
+    background-color: #f0f0f0;
+    background-image: -webkit-linear-gradient(top, #f7f7f7, #f0f0f0);
+    border-bottom: 1px solid #d8d8d8;
+    padding: 10px 20px;
+    white-space: pre;
+    font-family: monospace;
+}
+.command-cmdline:before {
+    content: "$ ";
+}
 
-  transform-origin: left bottom;
-  -webkit-transform-origin: left bottom;
-  transform: skew(-20deg) rotate(-10deg);
-  -webkit-transform: skew(-20deg) rotate(-10deg);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.command-output {
+    padding: 10px 20px;
+    white-space: pre;
+    font-family: monospace;
+    box-shadow: 0 1px 3px #eee inset;
+}
+
+.command-sequence {
+    padding: 0;
+    color: #353535;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 10px 0;
+    background: white;
+    border: 1px solid #d8d8d8;
+    border-bottom: 1px solid #ddd;
+    border-radius: 2px;
+    width: 600px;
+}
+.command-sequence li {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 20px;
+    border-bottom: 1px solid #d8d8d8;
+    white-space: pre;
+    font-family: monospace;
+}
+.command-sequence li:last-child {
+    border-bottom: none;
+}
+
+.command-sequence .cmd {
+    background-color: #f0f0f0;
+    background-image: -webkit-linear-gradient(top, #f7f7f7, #f0f0f0);
+    padding: 10px 20px;
+}
+.command-sequence .cmd:before {
+    content: "$ ";
+}
+
+.command-sequence .out {
+    padding: 10px 20px;
+    box-shadow: 0 1px 3px #eee inset;
+}
+
+.github-repo-link {
+    font-size: 14px;
 }
