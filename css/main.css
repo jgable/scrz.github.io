@@ -286,37 +286,6 @@ nav a:hover {
     margin: 40px 0 10px;
 }
 
-.command {
-    color: #353535;
-    font-size: 14px;
-    line-height: 1.4;
-    margin: 10px 0;
-    background: white;
-    border: 1px solid #d8d8d8;
-    border-bottom: 1px solid #ddd;
-    border-radius: 2px;
-    width: 600px;
-}
-
-.command-cmdline {
-    background-color: #f0f0f0;
-    background-image: -webkit-linear-gradient(top, #f7f7f7, #f0f0f0);
-    border-bottom: 1px solid #d8d8d8;
-    padding: 10px 20px;
-    white-space: pre;
-    font-family: monospace;
-}
-.command-cmdline:before {
-    content: "$ ";
-}
-
-.command-output {
-    padding: 10px 20px;
-    white-space: pre;
-    font-family: monospace;
-    box-shadow: 0 1px 3px #eee inset;
-}
-
 .command-sequence {
     padding: 0;
     color: #353535;
