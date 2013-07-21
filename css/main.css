@@ -283,7 +283,7 @@ nav a:hover {
     font-size: 1.4em;
     font-weight: 400;
     color: #111;
-    margin: 40px 0 10px;
+    margin: 100px 0 10px;
 }
 
 .command-sequence {
@@ -384,4 +384,28 @@ nav a:hover {
 
 .image-container {
     max-width: 600px;
+}
+
+#menu {
+    position: fixed;
+    right: 30px;
+    top: 100px;
+    text-align: right;
+}
+#menu h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+#menu ul {
+    margin: 0;
+}
+#menu li {
+    list-style: none;
+}
+#menu li a {
+    color: #7B838A;
+}
+#menu li a.active {
+    color: #259dff;
 }
