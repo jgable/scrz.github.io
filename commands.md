@@ -80,3 +80,14 @@ filesystem for later use, create a snapshot first.
 If the supervisor was started using sysvinit, upstart, systemd or another init
 system, it will likely be automatically restarted. In that case, use the init
 system to shut it down.
+
+<div class="command-title">Attach to a console</div>
+<ul class="command-sequence">
+    <li class="cmd">{{ 'scrz console <container-id>' | xml_escape }}</li>
+    <li class="out">Ubuntu 13.04 ydytubjhrg tty1
+
+ydytubjhrg login:</li>
+</ul>
+
+If the container is accepting connections on a tty, you can use this command to attach
+to one.
