@@ -13,6 +13,11 @@ body {
   color: #777;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 h1, h2, h3 {
   margin: 5px 0;
   font-weight: 100;
@@ -352,4 +357,62 @@ nav a:hover {
 
 .github-repo-link {
     font-size: 14px;
+}
+
+/* shadow */
+
+.shadow {
+  border: 1px solid #eee;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+  display: block;
+  padding: 8px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+/* The shadow elements are the same except where they are anchored,
+ * their rotation origin and the skew/rotation direction. */
+
+/* Bottom right shadow */
+.shadow::after {
+  z-index: -1;
+  position: absolute;
+  background: transparent;
+  width: 40%;
+  height: 40%;
+  content: '';
+  right: 0;
+  bottom: 0;
+
+  transform-origin: right bottom;
+  -webkit-transform-origin: right bottom;
+  transform: skew(20deg) rotate(10deg);
+  -webkit-transform: skew(20deg) rotate(10deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Bottom left shadow */
+.shadow::before {
+  z-index: -1;
+  position: absolute;
+  background: transparent;
+  width: 40%;
+  height: 40%;
+  content: '';
+  left: 0;
+  bottom: 0;
+
+  transform-origin: left bottom;
+  -webkit-transform-origin: left bottom;
+  transform: skew(-20deg) rotate(-10deg);
+  -webkit-transform: skew(-20deg) rotate(-10deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.image-container {
+    max-width: 600px;
 }
