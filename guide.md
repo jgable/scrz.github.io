@@ -45,6 +45,7 @@ The authority is a Ruby on Rails web server which manages the configuration of
 supervisors. It is optional, the supervisors can run just fine without an
 authority.
 
+TODO: Explain how to install the authority.
 
 # Images
 
@@ -102,7 +103,7 @@ commands to create and run new containers.
 
 Local configuration is stored in `/etc/scrz/config.json`. The supervisor
 detects any changes in that file and automatically starts and stops
-containers.
+containers. (TODO: explain the config file format)
 
 If you have an authority server running, the supervisor can also fetch its
 configuration from there. Simply pass the authority server address to the

@@ -6,30 +6,34 @@ title: authority
 # Authority
 
 The authority is a central database which stores configuration of all
-supervisors.
+supervisors. The authority exposes a HTTP interface which the supervisors use
+to communicate with it. The software is written in Ruby on Rails.
 
-## Database schema
-
-Here is the database schema, it may help you understanding the structure of
-the various entities that the authority manages.
-
-<div class="image-container">
-    <a href="/images/scrz-authority-schema.png" class="shadow">
-        <img src="/images/scrz-authority-schema.png" />
-    </a>
-</div>
+The authority is still a bit rough at the edges. For example, it doesn't yet
+have a full web interface that could be used to manage it. Some changes can
+only be done through the rails console.
 
 
-## Services and Revisions
+# Entities
 
-Configuration of services is stored in Revisions. Each time you change the
-configuration, a new revision is created. That way you can always go back if
-you make a mistake or deploy a buggy version.
+The authority manages a number of entities. To get a quick overview, take a
+look at the [database schema][scrz-authority-schema].
 
-Each Revision specifies which image to use, the command to execute,
-environment variables, and which ports and volumes it needs.
+*Projects* group multiple services together. *Images* are filesystem snapshots
+which can be used to instanciate a new container. Projects provide multiple
+*Services* to the outside. *Revisions* describe a particular version of a
+service. *Deployments* specify where revisions are deployed to.  *Hosts* are
+servers where supervisors are running.
 
-In a typical Ruby on Rails app, the command to execute the web server would be
-<code>bundle exec rails server</code>. In the environment you'd set
-<code>RAILS_ENV</code> to <code>production</code> and include other
-environment variables necessary in your app.
+Revisions reference *Envars*, *Ports* and *Volumes*. Those are runtime
+resources that are required by the revision.
+
+Not yet implemented are *Port/Volume allocations* and *Backing Volumes*. Those
+will be used by the supervisors to report back to the authority which actual
+resources have been allocated.
+
+In the future the authority will also keep track of *Proxies* and *Proxy
+Targets* to manage HTTP proxy configuration.
+
+
+[scrz-authority-schema]: /images/scrz-authority-schema.png
