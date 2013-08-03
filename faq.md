@@ -3,6 +3,21 @@ layout: default
 title: scrz
 ---
 
+## What are containers?
+
+[Containers][oslv] are a method to partition the operating system into
+multiple isolated systems. Individual containers have their own network
+interface, process namespace etc. Containers are also used to manage runtime
+resources (CPU, memory, disk), to limit the impact of one container's
+activities on the other containers.
+
+Most operating systems have one or more implementations of containers. Scrz
+uses Linux Containers (LXC). Other well-known implementations include BSD
+Jails or Solaris Zones.
+
+[oslv]: https://en.wikipedia.org/wiki/Operating_system-level_virtualization
+
+
 ## How do I create an image?
 
 An image is a filesystem snapshot that is used as the rootfs for the container.
