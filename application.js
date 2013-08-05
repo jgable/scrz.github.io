@@ -1,16 +1,11 @@
 $(function() {
     var doc = $(document);
 
-    var added;
+    var body = $("body");
     doc.scroll(function(e){
-        if (doc.scrollTop() > 5) {
-            if (added) return;
-            added = true;
-            $('body').addClass('scroll');
-        } else {
-            $('body').removeClass('scroll');
-            added = false;
-        }
+        var addScrollClass = doc.scrollTop() > 5;
+        
+        body.toggleClass('scroll', addScrollClass);
     })
 });
 
